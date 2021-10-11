@@ -1,0 +1,21 @@
+<h1>本を登録する</h1>
+
+<div>
+  <%= form_with model: @book, local: true do |f| %>
+
+    <div>商品名</div>
+    <%= f.text_area :name, placeholder:"商品名（必須 40文字まで)", maxlength:"40" %>
+
+    <div>ジャンル</div>
+    <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+
+    <div>感想</div>
+    <%= f.text_area :impression, placeholder:"商品の説明（必須 1,000文字まで", maxlength:"1000" %>
+
+    <div>
+      <%= f.submit "登録する" %>
+      <%=link_to 'もどる', root_path %>
+    </div>
+    
+  <% end %>
+</div>
