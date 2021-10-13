@@ -9,6 +9,18 @@
     <%= link_to "登録する", new_book_path %>
   </div>
 
+  <div>
+    <% current_user.books.each do |book| %>
+      <div>
+        <h5>
+          <%= book.name %>
+          <%= book.genre.name %>
+          <%= book.impression %>
+        </h5>
+      </div>
+    <% end %>
+  </div>
+
 <% else %>
   <ul>
     <li><%= link_to 'ログイン', new_user_session_path %></li>
