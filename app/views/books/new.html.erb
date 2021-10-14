@@ -13,6 +13,17 @@
     <%= f.text_area :impression, placeholder:"商品の説明（必須 1,000文字まで", maxlength:"1000" %>
 
     <div>
+      <select>
+        <option selected="selected" value="0">オススメ度</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+    </div>
+
+    <div>
       <%= f.submit "登録する" %>
     </div>
 
